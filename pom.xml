@@ -19,7 +19,6 @@
 
     <dependencies>
 
-        <!-- Gauge -->
         <dependency>
             <groupId>com.thoughtworks.gauge</groupId>
             <artifactId>gauge-java</artifactId>
@@ -27,14 +26,12 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Selenium WebDriver -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
 
-      
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
@@ -47,7 +44,6 @@
     <build>
         <plugins>
 
-            <!-- Java compiler ayarı -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -58,7 +54,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Gauge Maven plugin -->
             <plugin>
                 <groupId>com.thoughtworks.gauge.maven</groupId>
                 <artifactId>gauge-maven-plugin</artifactId>
