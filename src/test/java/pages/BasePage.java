@@ -51,5 +51,14 @@ public class BasePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).perform();
     }
+    protected boolean isElementVisible(By locator, int seconds) {
+        try {
+            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+            shortWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
     
 }

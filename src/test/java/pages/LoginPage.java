@@ -19,14 +19,13 @@ public class LoginPage extends BasePage {
     public void clickLoginButton() {
         click(loginButton);
     }
+    public void login(String email, String password) {
+        if (email == null || password == null) {
+            throw new RuntimeException("HB_EMAIL veya HB_PASSWORD environment variable olarak tanımlı değil.");
+        }
 
-    public void login(String email, String password) throws InterruptedException {
         enterEmail(email);
-        Thread.sleep(1000);
-
         enterPassword(password);
-        Thread.sleep(1000);
-
         clickLoginButton();
     }
 }
