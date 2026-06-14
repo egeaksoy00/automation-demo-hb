@@ -37,8 +37,9 @@ node_modules/
 *.swp
 *.swo
 
-*.target
-*.libs
+target/
+libs/
+reports/
+.settings/
+.classpath
 
-.target
-.libs
