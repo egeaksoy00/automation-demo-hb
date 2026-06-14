@@ -2,26 +2,38 @@ package tests;
 
 import driver.DriverFactory;
 import pages.HomePage;
+import pages.LoginPage;
 
 public class TestHomePage {
 
     public static void main(String[] args) {
 
-        try {
-            HomePage homePage = new HomePage();
+    	try {
+    	    HomePage homePage = new HomePage();
+    	    LoginPage loginPage = new LoginPage();
 
-            homePage.openHomePage();
+    	    String email = System.getenv("HB_EMAIL");
+    	    String password = System.getenv("HB_PASSWORD");
 
-            Thread.sleep(3000);
+    	    //kontrol için
+    	    System.out.println("EMAIL = " + System.getenv("HB_EMAIL"));
+    	    System.out.println("PASSWORD = " + System.getenv("HB_PASSWORD"));
+    	    
+    	    homePage.openHomePage();
 
-            homePage.goToLoginPage();
+    	    Thread.sleep(3000);
 
-            Thread.sleep(5000);
+    	    homePage.goToLoginPage();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+    	    Thread.sleep(3000);
 
-        } finally {
+    	    loginPage.login(email, password);
+
+    	    Thread.sleep(5000);
+
+    	} catch (Exception e) {
+    	    e.printStackTrace();
+    	}finally {
             DriverFactory.quitDriver();
         }
     }
