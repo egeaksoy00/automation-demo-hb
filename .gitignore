@@ -42,4 +42,4 @@ libs/
 reports/
 .settings/
 .classpath
-
+.project
