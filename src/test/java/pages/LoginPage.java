@@ -28,4 +28,13 @@ public class LoginPage extends BasePage {
         enterPassword(password);
         clickLoginButton();
     }
+    public boolean isLoginErrorDisplayed() {
+        String pageText = driver.getPageSource().toLowerCase();
+
+        return pageText.contains("n1e2")
+                || pageText.contains("beklenmeyen bir hata");
+    }
+    
+    
+    
 }

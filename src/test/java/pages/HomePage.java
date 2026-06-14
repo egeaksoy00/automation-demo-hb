@@ -7,8 +7,8 @@ public class HomePage extends BasePage {
 
     private By accountMenu = By.xpath("//*[contains(text(),'Giriş Yap')]");
     private By loginButtonInPopup = By.xpath("//a[contains(text(),'Giriş Yap') or .//span[contains(text(),'Giriş Yap')]]");
-    private By acceptCookieButton = By.id("hb-accept-all");
-    
+    private By acceptCookieButton = By.xpath("//div[@id='hb-accept-all']");    
+    private By searchBox = By.cssSelector("[data-test-id='search-bar-input']");
     
     public void openHomePage() {
         driver.get("https://www.hepsiburada.com");
@@ -29,5 +29,9 @@ public class HomePage extends BasePage {
         } else {
             System.out.println("Cookie görünmedi, devam ediliyor.");
         }
+    }
+    
+    public void searchProduct(String product) {
+        driver.get("https://www.hepsiburada.com/ara?q=" + product);
     }
 }
